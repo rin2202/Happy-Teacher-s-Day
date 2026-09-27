@@ -2,7 +2,23 @@
   "rewrites": [
     {
       "source": "/wish/:id",
-      "destination": "/wish.html"
+      "destination": "/public/wish.html"
+    },
+    {
+      "source": "/",
+      "destination": "/public/index.html"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/public/styles.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/public/app.js"
+    },
+    {
+      "source": "/wish.js",
+      "destination": "/public/wish.js"
     }
   ]
 }
