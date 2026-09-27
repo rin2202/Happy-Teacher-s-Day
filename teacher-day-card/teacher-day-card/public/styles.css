@@ -677,20 +677,19 @@ img {
   position: absolute;
   z-index: 3;
 
-  left: 16%;
-  top: 56%;
+  left: 1%;
+  top: 83%;
 
-  width: 68%;
+  width: 66%;
   height: 27%;
 
-  margin-left: 0;
+  margin: 0;
   padding: 0 4px;
 
-  color: #E56578;
-
+  color: #6d665b;
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: clamp(12px, 1.05vw, 18px);
+  line-height: 1.7;
 
   text-align: left;
 
@@ -698,7 +697,6 @@ img {
   overflow-wrap: anywhere;
 
   overflow-y: auto;
-
   scrollbar-width: thin;
 }
 
