@@ -206,7 +206,7 @@ img {
   position: absolute;
 
   left: 19%;
-  top: calc(32% + clamp(90px, 8.2vw, 145px) + 15%);
+  top: calc(32% + clamp(90px, 8.2vw, 145px) + 4%);
 
   width: 55%;
 
@@ -220,7 +220,7 @@ img {
 .sender-field {
   display: block;
 
-  width: calc(100% - 190px);
+  width: calc(100% - 250px);
 
   pointer-events: auto;
 
