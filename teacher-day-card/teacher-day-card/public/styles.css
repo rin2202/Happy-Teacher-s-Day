@@ -219,15 +219,11 @@ img {
 
 .sender-field {
   display: block;
-
-  width: calc(100% - 250px);
-
+  width: calc(100% - 290px);
   pointer-events: auto;
-
   position: relative;
   z-index: 10;
-
-  transform: rotate(356deg);
+  transform: translateX(15px) rotate(356deg);
 }
 
 .sender-field input {
