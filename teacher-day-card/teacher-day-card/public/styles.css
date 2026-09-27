@@ -149,17 +149,12 @@ img {
 .write-ui {
   position: absolute;
   z-index: 6;
-
-  /*
-    Same center as greenboard.
-  */
   left: 50%;
   top: 50%;
-
   width: min(70.45vw, 1140px);
   height: auto;
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + 60px));
 
   pointer-events: none;
 }
@@ -226,7 +221,7 @@ img {
 
 .sender-field {
   display: block;
-  width: calc(100% - 95px);
+  width: calc(100% - 180px);
   pointer-events: auto;
   position: relative;
   z-index: 10;
@@ -599,8 +594,9 @@ img {
   position: absolute;
   z-index: 3;
   left: 1%;
-  top: 80%;
+  top: 86%;
   width: 66%;
+  margin-left: -35px;
   max-height: 27%;
   overflow-y: auto;
   padding: 0 4px;
@@ -852,17 +848,16 @@ img {
   }
 
   .wish-message {
+    @media (max-width: 600px) {
+  .wish-message {
     font-size: 13px;
     line-height: 1.6;
-
     left: 16%;
     width: 68%;
-
-    top: 44%;
+    top: 56%;
+    margin-left: -30px;
   }
-
 }
-
 
 /* ==========================================================
    VERY SMALL PHONES
