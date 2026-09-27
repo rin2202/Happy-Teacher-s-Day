@@ -30,46 +30,59 @@
     <div class="scene-background" aria-hidden="true"></div>
 <p class="sender-note" id="senderNote"></p>
 
+<!-- =====================================================
+     PACKAGE GROUP
+     Page 2:
+       pack + openhere
+
+     Page 3:
+       same exact group
+       rotated together
+====================================================== -->
 <div class="pack-group" id="packGroup">
 
-    <!-- =====================================================
-         PACKAGE GROUP
-         Page 2:
-           pack + openhere
+  <img 
+    class="pack" 
+    src="/assets/pack.png" 
+    alt="" 
+    aria-hidden="true" 
+  />
 
-         Page 3:
-           same exact group
-           rotated together
-    ====================================================== -->
-    <div class="pack-group" id="packGroup">
+  <button 
+    class="openhere-button" 
+    id="openButton" 
+    type="button" 
+    aria-label="Open the card" 
+  >
+    <img 
+      src="/assets/openhere.png" 
+      alt="OPEN HERE" 
+    />
+  </button>
 
-      <img
-        class="pack"
-        src="/assets/pack.png"
-        alt=""
-        aria-hidden="true"
-      />
-
-      <button
-        class="openhere-button"
-        id="openButton"
-        type="button"
-        aria-label="Open the card"
-      >
-        <img
-          src="/assets/openhere.png"
-          alt="OPEN HERE"
-        />
-      </button>
-
-    </div>
+</div>
 
 
-    <!-- =====================================================
-         PAGE 3
-         POSTCARD sits ON TOP of package
-    ====================================================== -->
-    <div class="postcard-layer" id="postcardLayer">
+<!-- =====================================================
+     PAGE 3
+     POSTCARD sits ON TOP of package
+====================================================== -->
+<div class="postcard-layer" id="postcardLayer">
+
+  <img 
+    class="postcard" 
+    src="/assets/postcard.png" 
+    alt="" 
+    aria-hidden="true" 
+  />
+
+  <div 
+    class="wish-message" 
+    id="wishMessage" 
+    aria-live="polite"
+  ></div>
+
+</div>
 
       <img
         class="postcard"
