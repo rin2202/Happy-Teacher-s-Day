@@ -1089,34 +1089,38 @@ img {
       rotate(23deg);
   }
 
+  @media (max-width: 600px) {
+
   .wish-message {
-    font-size: 13px;
+    position: absolute;
 
-    line-height: 1.6;
+    z-index: 3;
 
-    /*
-      Keep the left edge stable.
-    */
     left: 16%;
+    top: 68%;
 
     width: 68%;
+    height: 27%;
 
-    top: 56%;
-
-    /*
-      Remove the old negative margin.
-      It was pushing long text too far to the left.
-    */
-    margin-left: 0;
-
+    margin: 0;
     padding: 0 3px;
+
+    color: #6d665b;
+    font-family: "Noto Sans TC", sans-serif;
+
+    font-size: 13px;
+    line-height: 1.6;
 
     text-align: left;
 
+    white-space: pre-wrap;
     overflow-wrap: break-word;
     word-break: normal;
-  }
 
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}
 
   /* --------------------------------------------------------
      SENDER NOTE
