@@ -24,88 +24,55 @@
 
   <main class="scene scene-wish">
 
-    <!-- =====================================================
-         PAGE 2 / PAGE 3 BACKGROUND
-    ====================================================== -->
-    <div class="scene-background" aria-hidden="true"></div>
-<p class="sender-note" id="senderNote"></p>
+  <div class="scene-background" aria-hidden="true"></div>
 
-<!-- =====================================================
-     PACKAGE GROUP
-     Page 2:
-       pack + openhere
+  <p class="sender-note" id="senderNote"></p>
 
-     Page 3:
-       same exact group
-       rotated together
-====================================================== -->
-<div class="pack-group" id="packGroup">
+  <div class="pack-group" id="packGroup">
 
-  <img 
-    class="pack" 
-    src="/assets/pack.png" 
-    alt="" 
-    aria-hidden="true" 
-  />
-
-  <button 
-    class="openhere-button" 
-    id="openButton" 
-    type="button" 
-    aria-label="Open the card" 
-  >
-    <img 
-      src="/assets/openhere.png" 
-      alt="OPEN HERE" 
+    <img
+      class="pack"
+      src="/assets/pack.png"
+      alt=""
+      aria-hidden="true"
     />
-  </button>
 
-</div>
-
-
-<!-- =====================================================
-     PAGE 3
-     POSTCARD sits ON TOP of package
-====================================================== -->
-<div class="postcard-layer" id="postcardLayer">
-
-  <img 
-    class="postcard" 
-    src="/assets/postcard.png" 
-    alt="" 
-    aria-hidden="true" 
-  />
-
-  <div 
-    class="wish-message" 
-    id="wishMessage" 
-    aria-live="polite"
-  ></div>
-
-</div>
-
+    <button
+      class="openhere-button"
+      id="openButton"
+      type="button"
+      aria-label="Open the card"
+    >
       <img
-        class="postcard"
-        src="/assets/postcard.png"
-        alt=""
-        aria-hidden="true"
+        src="/assets/openhere.png"
+        alt="OPEN HERE"
       />
+    </button>
 
-      <div
-        class="wish-message"
-        id="wishMessage"
-        aria-live="polite"
-      ></div>
+  </div>
 
-    </div>
+  <div class="postcard-layer" id="postcardLayer">
 
+    <img
+      class="postcard"
+      src="/assets/postcard.png"
+      alt=""
+      aria-hidden="true"
+    />
 
-    <!-- Loading while fetching wish -->
-    <div class="loading" id="loading">
-      正在準備一份小小的心意…
-    </div>
+    <div
+      class="wish-message"
+      id="wishMessage"
+      aria-live="polite"
+    ></div>
 
-  </main>
+  </div>
+
+  <div class="loading" id="loading">
+    正在準備一份小小的心意…
+  </div>
+
+</main>
 
   <script src="/wish.js"></script><script>
   const scene = document.querySelector('.scene-wish');
