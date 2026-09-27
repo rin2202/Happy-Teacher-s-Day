@@ -206,7 +206,7 @@ img {
   position: absolute;
 
   left: 19%;
-  top: calc(32% + clamp(90px, 8.2vw, 145px) + 4%);
+  top: calc(32% + clamp(90px, 8.2vw, 145px) + 44%);
 
   width: 55%;
 
