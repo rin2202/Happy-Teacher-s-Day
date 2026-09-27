@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/wish/:id",
+      "destination": "/wish.html"
+    }
+  ]
+}
