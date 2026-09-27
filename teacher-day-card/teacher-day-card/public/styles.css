@@ -594,7 +594,7 @@ img {
   position: absolute;
   z-index: 3;
   left: 1%;
-  top: 81%;
+  top: 83%;
   width: 66%;
   margin-left: -45px;
   max-height: 27%;
@@ -890,10 +890,10 @@ img {
   }
 
 }
-    .close-result {
+   .close-result {
   position: absolute;
-  top: 14px;
-  right: 16px;
+  top: 12px;
+  right: 14px;
 
   width: 34px;
   height: 34px;
@@ -908,12 +908,12 @@ img {
   line-height: 1;
 
   cursor: pointer;
-  z-index: 20;
+  z-index: 30;
 
   transition: transform 160ms ease, opacity 160ms ease;
 }
 
 .close-result:hover {
-  transform: scale(1.1);
   opacity: .7;
+  transform: scale(1.1);
 }
