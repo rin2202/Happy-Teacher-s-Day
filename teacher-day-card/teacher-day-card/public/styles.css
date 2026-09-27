@@ -136,7 +136,7 @@ img {
 
   transform:
     translate(-50%, -50%)
-    translateY(-6%);
+    translateY(15%);
 }
 
 
@@ -173,7 +173,7 @@ img {
 .message-field {
   position: absolute;
   left: 22.5%;
-  top: 42%;
+  top: 49%;
   width: 55%;
   pointer-events: auto;
   transform: rotate(356deg);
@@ -216,7 +216,7 @@ img {
 .sender-row {
   position: absolute;
   left: 22.5%;
-  top: calc(42% + clamp(90px, 8.2vw, 145px) + 2.2%);
+  top: calc(49% + clamp(90px, 8.2vw, 145px) + 2.2%);
   width: 55%;
   display: flex;
   align-items: center;
@@ -598,8 +598,8 @@ img {
 .wish-message {
   position: absolute;
   z-index: 3;
-  left: 17%;
-  top: 65%;
+  left: 7%;
+  top: 95%;
   width: 66%;
   max-height: 27%;
   overflow-y: auto;
