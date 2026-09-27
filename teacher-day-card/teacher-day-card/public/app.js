@@ -33,4 +33,6 @@ $('shareLink').addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(url); showToast('已複製連結，可以貼到 LINE / Messenger 囉！'); }
     catch { showToast('請複製上面的連結分享給老師。'); }
   }
+});$('closeResult').addEventListener('click', () => {
+  $('result').hidden = true;
 });
