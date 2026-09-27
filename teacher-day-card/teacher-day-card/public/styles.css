@@ -136,7 +136,7 @@ img {
 
   transform:
     translate(-50%, -50%)
-    translateY(-10%);
+    translateY(-6%);
 }
 
 
@@ -247,8 +247,7 @@ img {
   pointer-events: auto;
   position: relative;
   z-index: 11;
-  transform: rotate(356deg);
-}
+ }
 
 
 /* ----------------------------------------------------------
@@ -600,7 +599,7 @@ img {
   position: absolute;
   z-index: 3;
   left: 17%;
-  top: 51%;
+  top: 65%;
   width: 66%;
   max-height: 27%;
   overflow-y: auto;
@@ -718,7 +717,9 @@ img {
 
   .scene-wish.opened .pack-group {
     left: 63%;
+    transform: translate(-50%, -50%) rotate(23deg);
   }
+}
 
 }
 
@@ -847,7 +848,7 @@ img {
 
     transform:
       translate(-50%, -50%)
-      rotate(337deg);
+      rotate(23deg);
   }
 
   .wish-message {
