@@ -28,7 +28,9 @@
          PAGE 2 / PAGE 3 BACKGROUND
     ====================================================== -->
     <div class="scene-background" aria-hidden="true"></div>
+<p class="sender-note" id="senderNote"></p>
 
+<div class="pack-group" id="packGroup">
 
     <!-- =====================================================
          PACKAGE GROUP
@@ -98,6 +100,7 @@
   const postcardLayer = document.getElementById('postcardLayer');
   const wishMessage = document.getElementById('wishMessage');
   const loading = document.getElementById('loading');
+  const senderNote = document.getElementById('senderNote');
 
   function getWishId() {
     const parts = window.location.pathname.split('/').filter(Boolean);
@@ -130,6 +133,9 @@
       }
 
       wishMessage.textContent = data.message || '';
+
+const senderName = data.studentName || '某位學生';
+senderNote.textContent = `這是一份來自${senderName}的心意`;
 
       loading.style.display = 'none';
 
