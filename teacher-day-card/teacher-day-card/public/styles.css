@@ -223,7 +223,8 @@ img {
   pointer-events: auto;
   position: relative;
   z-index: 10;
-  transform: translateX(15px) rotate(356deg);
+  .sender-field {
+  transform: translate(8px, 30px) rotate(356deg);
 }
 
 .sender-field input {
