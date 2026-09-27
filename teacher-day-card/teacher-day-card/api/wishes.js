@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
@@ -10,7 +10,6 @@ export default async function handler(req, res) {
     });
   }
 
-  // GET /api/wishes?id=xxxxx
   if (req.method === 'GET') {
     const id = String(req.query?.id || '').trim();
 
@@ -32,7 +31,9 @@ export default async function handler(req, res) {
       );
 
       if (!response.ok) {
-        console.error('Supabase GET error:', await response.text());
+        const errorText = await response.text();
+        console.error('Supabase GET error:', errorText);
+
         return res.status(500).json({
           error: 'Failed to load wish.'
         });
@@ -64,21 +65,12 @@ export default async function handler(req, res) {
     }
   }
 
-  // POST /api/wishes
   if (req.method === 'POST') {
     const body = req.body || {};
 
-    const studentName = String(body.studentName || '')
-      .trim()
-      .slice(0, 80);
-
-    const teacherName = String(body.teacherName || '')
-      .trim()
-      .slice(0, 80);
-
-    const message = String(body.message || '')
-      .trim()
-      .slice(0, 1000);
+    const studentName = String(body.studentName || '').trim().slice(0, 80);
+    const teacherName = String(body.teacherName || '').trim().slice(0, 80);
+    const message = String(body.message || '').trim().slice(0, 1000);
 
     if (!studentName || !teacherName || !message) {
       return res.status(400).json({
@@ -87,7 +79,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const shareToken = crypto.randomBytes(6).toString('base64url');
+      const shareToken = crypto.randomBytes(6).toString('hex');
 
       const response = await fetch(
         `${supabaseUrl}/rest/v1/wishes`,
@@ -103,8 +95,7 @@ export default async function handler(req, res) {
             share_token: shareToken,
             sender_name: studentName,
             teacher_name: teacherName,
-            message,
-            created_at: new Date().toISOString()
+            message
           })
         }
       );
@@ -118,9 +109,7 @@ export default async function handler(req, res) {
         });
       }
 
-      const protocol =
-        req.headers['x-forwarded-proto'] || 'https';
-
+      const protocol = req.headers['x-forwarded-proto'] || 'https';
       const host = req.headers.host;
 
       return res.status(200).json({
@@ -142,4 +131,4 @@ export default async function handler(req, res) {
   return res.status(405).json({
     error: 'Method not allowed.'
   });
-}
+};
