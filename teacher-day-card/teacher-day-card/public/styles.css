@@ -206,7 +206,7 @@ img {
   position: absolute;
 
   left: 19%;
-  top: calc(32% + clamp(90px, 8.2vw, 145px) + 6%);
+  top: calc(32% + clamp(90px, 8.2vw, 145px) + 18%);
 
   width: 55%;
 
@@ -223,7 +223,7 @@ img {
   pointer-events: auto;
   position: relative;
   z-index: 10;
-  transform: translateX(10px) rotate(356deg);
+  transform: translateX(8px) rotate(356deg);
 }
 
 .sender-field input {
