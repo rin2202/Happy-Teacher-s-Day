@@ -917,3 +917,26 @@ img {
   opacity: .7;
   transform: scale(1.1);
 }
+    .sender-note {
+  position: absolute;
+  z-index: 4;
+
+  left: 50%;
+  top: 12%;
+
+  transform: translateX(-50%);
+
+  margin: 0;
+  width: max-content;
+  max-width: 80vw;
+
+  color: #6d665b;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: clamp(14px, 1.25vw, 21px);
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
