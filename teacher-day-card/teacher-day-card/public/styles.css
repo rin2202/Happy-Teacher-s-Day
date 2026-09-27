@@ -675,35 +675,29 @@ img {
 
 .wish-message {
   position: absolute;
-
   z-index: 3;
 
-  left: 5%;
-  top: 83%;
+  left: 16%;
+  top: 56%;
 
-  width: 66%;
+  width: 68%;
 
-  margin-left: -45px;
-
-  max-height: 27%;
-
-  overflow-y: auto;
-
+  margin-left: 0;
   padding: 0 4px;
 
   color: #6d665b;
 
   font-family: "Noto Sans TC", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
 
-  font-size: clamp(12px, 1.05vw, 18px);
-
-  line-height: 1.7;
-
-  text-align: center;
+  text-align: left;
 
   white-space: pre-wrap;
-
   overflow-wrap: anywhere;
+
+  max-height: 27%;
+  overflow-y: auto;
 
   scrollbar-width: thin;
 }
