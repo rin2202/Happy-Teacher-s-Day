@@ -173,7 +173,7 @@ img {
 .message-field {
   position: absolute;
   left: 22.5%;
-  top: 65%;
+  top: 32%;
   width: 55%;
   pointer-events: auto;
   transform: rotate(356deg);
@@ -216,7 +216,7 @@ img {
 .sender-row {
   position: absolute;
   left: 22.5%;
-  top: calc(65% + clamp(90px, 8.2vw, 145px) + 2.2%);
+  top: calc(32% + clamp(90px, 8.2vw, 145px) + 2.2%);
   width: 55%;
   display: flex;
   align-items: center;
