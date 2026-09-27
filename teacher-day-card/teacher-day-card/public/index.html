@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教師節快樂！</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="page page-write">
+  <main class="scene scene-write">
+    <div class="reference-bg"></div>
+    <section class="write-panel" aria-label="Write a Teacher's Day wish">
+      <h1>教師節<br><span>快樂！</span></h1>
+      <p class="prompt">你想寄到老師什麼祝福呢？</p>
+      <label class="field wish-field">
+        <span class="sr-only">祝福內容</span>
+        <textarea id="message" maxlength="1000" placeholder="老師～祝您教師節快樂！..."></textarea>
+      </label>
+      <label class="field emailish">
+        <span class="sr-only">老師姓名</span>
+        <input id="teacherName" maxlength="80" placeholder="老師的名字：林老師" />
+      </label>
+      <label class="field sender">
+        <span class="sr-only">你的名字</span>
+        <input id="studentName" maxlength="80" placeholder="你的名字：小鳳" />
+      </label>
+      <button id="createWish" class="send-button">送出祝福 ♡</button>
+    </section>
+
+    <section id="result" class="result-card" hidden>
+      <div class="result-inner">
+        <div class="mini-envelope">✉</div>
+        <h2>你的祝福準備好了！</h2>
+        <p>把這份小小的心意送給老師吧 ♡</p>
+        <div class="link-row">
+          <input id="wishUrl" readonly />
+          <button id="copyLink">複製連結</button>
+        </div>
+        <button id="shareLink" class="share-button">分享給老師</button>
+        <a id="previewLink" class="preview-link" target="_blank" rel="noreferrer">先看看卡片 ↗</a>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
