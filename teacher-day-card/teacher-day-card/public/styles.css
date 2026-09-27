@@ -172,7 +172,7 @@ img {
 
 .message-field {
   position: absolute;
-  left: 22.5%;
+  left: 19%;
   top: 32%;
   width: 55%;
   pointer-events: auto;
@@ -215,7 +215,7 @@ img {
 
 .sender-row {
   position: absolute;
-  left: 22.5%;
+  left: 19%;
   top: calc(32% + clamp(90px, 8.2vw, 145px) + 2.2%);
   width: 55%;
   display: flex;
@@ -226,7 +226,7 @@ img {
 
 .sender-field {
   display: block;
-  width: calc(100% - 125px);
+  width: calc(100% - 95px);
   pointer-events: auto;
   position: relative;
   z-index: 10;
@@ -599,7 +599,7 @@ img {
   position: absolute;
   z-index: 3;
   left: 1%;
-  top: 75%;
+  top: 80%;
   width: 66%;
   max-height: 27%;
   overflow-y: auto;
