@@ -92,7 +92,59 @@
 
   </main>
 
-  <script src="/wish.js"></script>
+  <script src="/wish.js"></script><script>
+  const scene = document.querySelector('.scene-wish');
+  const openButton = document.getElementById('openButton');
+  const postcardLayer = document.getElementById('postcardLayer');
+  const wishMessage = document.getElementById('wishMessage');
+  const loading = document.getElementById('loading');
+
+  function getWishId() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const wishIndex = parts.indexOf('wish');
+
+    if (wishIndex !== -1 && parts[wishIndex + 1]) {
+      return parts[wishIndex + 1];
+    }
+
+    return null;
+  }
+
+  async function loadWish() {
+    const wishId = getWishId();
+
+    if (!wishId) {
+      loading.textContent = '找不到這份祝福。';
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `/api/wishes?id=${encodeURIComponent(wishId)}`
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to load wish.');
+      }
+
+      wishMessage.textContent = data.message || '';
+
+      loading.style.display = 'none';
+
+    } catch (error) {
+      console.error(error);
+      loading.textContent = '這份祝福暫時無法讀取。';
+    }
+  }
+
+  openButton.addEventListener('click', () => {
+    scene.classList.add('opened');
+  });
+
+  loadWish();
+</script>
 
 </body>
 </html>
