@@ -136,7 +136,7 @@ img {
 
   transform:
     translate(-50%, -50%)
-    translateY(-30%);
+    translateY(-20%);
 }
 
 
@@ -179,8 +179,9 @@ img {
   width: 55%;
 
   pointer-events: auto;
-}
 
+  transform: rotate(4deg);
+}
 .message-field textarea {
   display: block;
 
@@ -230,7 +231,8 @@ img {
 
   pointer-events: none;
 }
-
+ transform: rotate(4deg);
+}
 
 .sender-field {
   display: block;
@@ -238,7 +240,7 @@ img {
   /*
     Airplane occupies the remaining space on the right.
   */
-  width: calc(100% - 85px);
+  width: calc(100% - 125px);
 
   pointer-events: auto;
 }
