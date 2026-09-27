@@ -206,6 +206,11 @@ img {
   position: absolute;
 
   left: 19%;
+
+  /*
+    Desktop reference position.
+    The sender sits below the message field.
+  */
   top: calc(32% + clamp(90px, 8.2vw, 145px) + 18%);
 
   width: 55%;
@@ -219,11 +224,20 @@ img {
 
 .sender-field {
   display: block;
+
   width: calc(100% - 190px);
+
   pointer-events: auto;
+
   position: relative;
   z-index: 10;
-  transform: translateX(8px) rotate(356deg);
+
+  /*
+    Keep the desktop horizontal adjustment.
+  */
+  transform:
+    translateX(8px)
+    rotate(356deg);
 }
 
 .sender-field input {
@@ -284,12 +298,17 @@ img {
 }
 
 .airplane-button:hover {
-  transform: translateY(-3px) rotate(-2deg);
+  transform:
+    translateY(-3px)
+    rotate(-2deg);
+
   filter: brightness(1.04);
 }
 
 .airplane-button:active {
-  transform: translateY(1px) scale(0.96);
+  transform:
+    translateY(1px)
+    scale(0.96);
 }
 
 
@@ -304,7 +323,8 @@ img {
   left: 50%;
   top: 50%;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(-50%, -50%);
 
   width: min(92vw, 560px);
 
@@ -328,7 +348,6 @@ img {
 
 /* ----------------------------------------------------------
    CLOSE BUTTON
-   Always stays at the top-right corner of popup.
 ---------------------------------------------------------- */
 
 .close-result {
@@ -465,7 +484,8 @@ img {
 
   z-index: 50;
 
-  transform: translate(-50%, 20px);
+  transform:
+    translate(-50%, 20px);
 
   opacity: 0;
 
@@ -486,7 +506,8 @@ img {
 .toast.show {
   opacity: 1;
 
-  transform: translate(-50%, 0);
+  transform:
+    translate(-50%, 0);
 }
 
 
@@ -501,7 +522,6 @@ img {
 
 /* ==========================================================
    SENDER NOTE
-   PAGE 2 ONLY
 ========================================================== */
 
 .sender-note {
@@ -512,7 +532,8 @@ img {
   left: 50%;
   top: 12%;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   margin: 0;
 
@@ -532,11 +553,8 @@ img {
 
   opacity: 1;
 
-  /*
-    Do NOT automatically fade it.
-    It disappears only when .opened is added.
-  */
-  transition: opacity 700ms ease;
+  transition:
+    opacity 700ms ease;
 }
 
 
@@ -595,7 +613,8 @@ img {
 
   background: transparent;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   z-index: 2;
 
@@ -610,12 +629,17 @@ img {
 }
 
 .openhere-button:hover {
-  transform: translateX(-50%) scale(1.025);
+  transform:
+    translateX(-50%)
+    scale(1.025);
+
   filter: brightness(1.03);
 }
 
 .openhere-button:active {
-  transform: translateX(-50%) scale(0.97);
+  transform:
+    translateX(-50%)
+    scale(0.97);
 }
 
 
@@ -671,6 +695,7 @@ img {
 
 .wish-message {
   position: absolute;
+
   z-index: 3;
 
   left: 15%;
@@ -683,14 +708,22 @@ img {
   padding: 0 4px;
 
   color: #6d665b;
+
   font-family: "Noto Sans TC", sans-serif;
+
   font-size: clamp(12px, 1.05vw, 18px);
   line-height: 1.7;
 
+  /*
+    Left edge stays fixed.
+    Text wraps naturally like a normal text box.
+  */
   text-align: left;
 
   white-space: pre-wrap;
-  overflow-wrap: anywhere;
+
+  overflow-wrap: break-word;
+  word-break: normal;
 
   overflow-y: auto;
   scrollbar-width: thin;
@@ -713,15 +746,9 @@ img {
   opacity: 1;
 }
 
-
-/* Sender note disappears ONLY after opening */
-
 .scene-wish.opened .sender-note {
   opacity: 0;
 }
-
-
-/* OPEN HERE becomes non-interactive after opening */
 
 .scene-wish.opened .openhere-button {
   pointer-events: none;
@@ -740,13 +767,15 @@ img {
 
   z-index: 15;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   padding: 7px 14px;
 
   border-radius: 999px;
 
-  background: rgba(250, 243, 222, 0.65);
+  background:
+    rgba(250, 243, 222, 0.65);
 
   color: #7c705d;
 
@@ -767,16 +796,28 @@ img {
 
 @keyframes float {
   50% {
-    transform: translateY(-5px);
+    transform:
+      translateY(-5px);
   }
 }
 
 
 /* ==========================================================
    TABLET
+   601px – 900px
 ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 601px) {
+
+  /*
+    Desktop board:
+      70.45vw
+
+    Tablet:
+      scale to 82vw
+    This gives the board enough width without making
+    the UI proportions too small.
+  */
 
   .board-layer,
   .write-ui {
@@ -786,6 +827,71 @@ img {
   .bookpencil {
     width: min(94vw, 870px);
   }
+
+
+  /* --------------------------------------------------------
+     PAGE 1 — TABLET
+  -------------------------------------------------------- */
+
+  .message-field {
+    left: 19%;
+    top: 32%;
+    width: 55%;
+  }
+
+  .message-field textarea {
+    height: clamp(90px, 8.2vw, 125px);
+
+    padding: 13px 16px;
+
+    font-size: clamp(13px, 1.4vw, 17px);
+  }
+
+  .sender-row {
+    left: 19%;
+
+    /*
+      Keep the same desktop relationship:
+      message height + 18% vertical gap.
+    */
+    top:
+      calc(
+        32%
+        + clamp(90px, 8.2vw, 125px)
+        + 18%
+      );
+
+    width: 55%;
+  }
+
+  .sender-field {
+    /*
+      Desktop sender field is shortened to leave room
+      for the airplane.
+    */
+    width: calc(100% - 145px);
+
+    transform:
+      translateX(8px)
+      rotate(356deg);
+  }
+
+  .sender-field input {
+    height: clamp(36px, 3.2vw, 48px);
+
+    padding: 8px 13px;
+
+    font-size: clamp(13px, 1.25vw, 16px);
+  }
+
+  .airplane-button {
+    width: clamp(60px, 7.1vw, 85px);
+  }
+
+
+  /* --------------------------------------------------------
+     PAGE 2 / PAGE 3 — TABLET
+  -------------------------------------------------------- */
 
   .pack-group {
     width: min(42vw, 390px);
@@ -802,11 +908,24 @@ img {
       translate(-50%, -50%)
       rotate(23deg);
   }
+
+
+  .sender-note {
+    top: 11%;
+
+    font-size: clamp(15px, 1.8vw, 19px);
+  }
+
+
+  .wish-message {
+    font-size: clamp(12px, 1.35vw, 16px);
+  }
 }
 
 
 /* ==========================================================
    MOBILE
+   381px – 600px
 ========================================================== */
 
 @media (max-width: 600px) {
@@ -821,9 +940,9 @@ img {
   }
 
 
-  /* --------------------------------------------------------
-     PAGE 1
-  -------------------------------------------------------- */
+  /* ========================================================
+     PAGE 1 — MOBILE
+  ======================================================== */
 
   .board-layer,
   .write-ui {
@@ -838,31 +957,63 @@ img {
       translateY(-31%);
   }
 
+
+  /* --------------------------------------------------------
+     MESSAGE
+  -------------------------------------------------------- */
+
   .message-field {
+    /*
+      Desktop = 19% / 32% / 55%
+
+      Mobile needs a little more horizontal width
+      because the screen is narrow.
+    */
     left: 18%;
     top: 39%;
-
     width: 64%;
   }
 
   .message-field textarea {
+    /*
+      Fixed mobile height is more stable than vw scaling.
+    */
     height: 110px;
 
     padding: 12px;
 
     font-size: 14px;
+    line-height: 1.55;
   }
+
+
+  /* --------------------------------------------------------
+     SENDER
+  -------------------------------------------------------- */
 
   .sender-row {
     left: 18%;
 
-    top: calc(39% + 110px + 3%);
+    top:
+      calc(
+        39%
+        + 110px
+        + 3%
+      );
 
     width: 64%;
   }
 
   .sender-field {
+    /*
+      Keep the desktop +8px horizontal adjustment.
+      Do not move the airplane together with the input.
+    */
     width: calc(100% - 68px);
+
+    transform:
+      translateX(8px)
+      rotate(356deg);
   }
 
   .sender-field input {
@@ -878,9 +1029,9 @@ img {
   }
 
 
-  /* --------------------------------------------------------
+  /* ========================================================
      RESULT
-  -------------------------------------------------------- */
+  ======================================================== */
 
   .result-card {
     width: calc(100vw - 32px);
@@ -900,18 +1051,15 @@ img {
     width: 100%;
   }
 
-  /*
-    Keep close button at the top-right even on mobile.
-  */
   .close-result {
     top: 10px;
     right: 10px;
   }
 
 
-  /* --------------------------------------------------------
-     PAGE 2
-  -------------------------------------------------------- */
+  /* ========================================================
+     PAGE 2 — MOBILE
+  ======================================================== */
 
   .pack-group {
     width: 62vw;
@@ -920,9 +1068,9 @@ img {
   }
 
 
-  /* --------------------------------------------------------
-     PAGE 3
-  -------------------------------------------------------- */
+  /* ========================================================
+     PAGE 3 — MOBILE
+  ======================================================== */
 
   .postcard-layer {
     width: 55vw;
@@ -946,20 +1094,33 @@ img {
 
     line-height: 1.6;
 
+    /*
+      Keep the left edge stable.
+    */
     left: 16%;
 
     width: 68%;
 
     top: 56%;
 
-    margin-left: -30px;
+    /*
+      Remove the old negative margin.
+      It was pushing long text too far to the left.
+    */
+    margin-left: 0;
+
+    padding: 0 3px;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
 
-  /*
-    Sender note on mobile:
-    keep it comfortably readable and visible.
-  */
+  /* --------------------------------------------------------
+     SENDER NOTE
+  -------------------------------------------------------- */
 
   .sender-note {
     top: 10%;
@@ -975,33 +1136,72 @@ img {
 
 /* ==========================================================
    VERY SMALL PHONES
+   <= 380px
 ========================================================== */
 
 @media (max-width: 380px) {
+
+  /* --------------------------------------------------------
+     PAGE 1
+  -------------------------------------------------------- */
 
   .message-field textarea {
     height: 95px;
   }
 
   .sender-row {
-    top: calc(39% + 95px + 3%);
+    top:
+      calc(
+        39%
+        + 95px
+        + 3%
+      );
   }
 
   .sender-field {
     width: calc(100% - 58px);
+
+    transform:
+      translateX(8px)
+      rotate(356deg);
   }
 
   .airplane-button {
     width: 50px;
   }
 
+
+  /* --------------------------------------------------------
+     PAGE 2
+  -------------------------------------------------------- */
+
   .pack-group {
     width: 68vw;
   }
 
+
+  /* --------------------------------------------------------
+     PAGE 3
+  -------------------------------------------------------- */
+
   .postcard-layer {
     width: 60vw;
   }
+
+  .wish-message {
+    left: 16%;
+    width: 68%;
+
+    margin-left: 0;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+
+  /* --------------------------------------------------------
+     SENDER NOTE
+  -------------------------------------------------------- */
 
   .sender-note {
     font-size: 14px;
