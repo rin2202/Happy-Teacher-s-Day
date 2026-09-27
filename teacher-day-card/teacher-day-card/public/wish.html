@@ -2,35 +2,97 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
   <title>給老師的一份心意</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body class="page page-wish">
+
   <main class="scene scene-wish">
-    <div class="reference-bg"></div>
-    <div class="paper-shadow"></div>
-    <div class="envelope-flap"></div>
-    <div class="polaroid-wrap">
-      <article class="polaroid" id="polaroid">
-        <div class="photo-window">
-          <div class="photo-mascot">♡</div>
-          <div class="photo-chalk">教師節<br>快樂！</div>
-        </div>
-        <div class="thankyou">Thank You...</div>
-        <div class="subtitle">for helping me grow <span>♥</span></div>
-        <div class="wish-message" id="wishMessage"></div>
-        <div class="signature" id="signature"></div>
-      </article>
+
+    <!-- =====================================================
+         PAGE 2 / PAGE 3 BACKGROUND
+    ====================================================== -->
+    <div class="scene-background" aria-hidden="true"></div>
+
+
+    <!-- =====================================================
+         PACKAGE GROUP
+         Page 2:
+           pack + openhere
+
+         Page 3:
+           same exact group
+           rotated together
+    ====================================================== -->
+    <div class="pack-group" id="packGroup">
+
+      <img
+        class="pack"
+        src="/assets/pack.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <button
+        class="openhere-button"
+        id="openButton"
+        type="button"
+        aria-label="Open the card"
+      >
+        <img
+          src="/assets/openhere.png"
+          alt="OPEN HERE"
+        />
+      </button>
+
     </div>
-    <div class="open-label" id="openLabel">A GIFT FOR YOU<br><strong>OPEN<br>HERE</strong> ✩</div>
-    <button class="open-button" id="openButton" aria-label="Open your Teacher's Day card">OPEN ♡</button>
-    <div class="sparkles" aria-hidden="true">✦　·　✧　·　✦</div>
-    <div class="loading" id="loading">正在準備一份小小的心意…</div>
+
+
+    <!-- =====================================================
+         PAGE 3
+         POSTCARD sits ON TOP of package
+    ====================================================== -->
+    <div class="postcard-layer" id="postcardLayer">
+
+      <img
+        class="postcard"
+        src="/assets/postcard.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div
+        class="wish-message"
+        id="wishMessage"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+
+    <!-- Loading while fetching wish -->
+    <div class="loading" id="loading">
+      正在準備一份小小的心意…
+    </div>
+
   </main>
+
   <script src="/wish.js"></script>
+
 </body>
 </html>
