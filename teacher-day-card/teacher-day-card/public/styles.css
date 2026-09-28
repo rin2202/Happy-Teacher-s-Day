@@ -1210,4 +1210,32 @@ img {
   .sender-note {
     font-size: 14px;
   }
+  .send-another-link {
+  position: absolute;
+  z-index: 20;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  color: #7c705d;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 13px;
+
+  text-decoration: none;
+  opacity: 0.75;
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.send-another-link:hover {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    translateY(-2px);
+}
 }
