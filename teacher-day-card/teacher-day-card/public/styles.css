@@ -1211,52 +1211,31 @@ img {
     font-size: 14px;
   }
 .send-another-link {
-  position: fixed !important;
-  left: 50% !important;
-  bottom: 22px !important;
-  top: auto !important;
-  right: auto !important;
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 99999;
 
-  z-index: 9999 !important;
+  color: #7c705d;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-decoration: none;
 
-  display: block !important;
-  width: max-content !important;
-  height: auto !important;
+  transform: translateX(-50%);
 
-  transform: translateX(-50%) !important;
+  opacity: 0;
+  pointer-events: none;
 
-  color: #7c705d !important;
-  font-family: "Noto Sans TC", sans-serif !important;
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  white-space: nowrap !important;
-  text-decoration: none !important;
-
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-
-  transition:
-    opacity 500ms ease,
-    visibility 0s linear 500ms !important;
+  transition: opacity 500ms ease;
 }
 
-.scene-wish.opened .send-another-link {
-  opacity: 0.75 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-
-  position: fixed !important;
-  left: 50% !important;
-  bottom: 22px !important;
-  top: auto !important;
-  transform: translateX(-50%) !important;
-
-  transition:
-    opacity 500ms ease,
-    visibility 0s linear 0s !important;
+.send-another-link.show {
+  opacity: 0.75;
+  pointer-events: auto;
 }
 
-.scene-wish.opened .send-another-link:hover {
-  opacity: 1 !important;
+.send-another-link:hover {
+  opacity: 1;
 }
