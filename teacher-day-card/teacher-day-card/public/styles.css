@@ -1210,16 +1210,18 @@ img {
   .sender-note {
     font-size: 14px;
   }
- .send-another-link {
-  position: fixed !important;
-  z-index: 100 !important;
+.send-another-link {
+  position: absolute;
 
-  left: 50% !important;
-  bottom: 12px !important;
+  z-index: 20;
 
-  transform: translateX(-50%) !important;
+  left: 50%;
+  bottom: 16px;
+
+  transform: translateX(-50%);
 
   color: #7c705d;
+
   font-family: "Noto Sans TC", sans-serif;
   font-size: 13px;
   line-height: 1.5;
@@ -1239,5 +1241,5 @@ img {
 
   transform:
     translateX(-50%)
-    translateY(-2px) !important;
+    translateY(-2px);
 }
