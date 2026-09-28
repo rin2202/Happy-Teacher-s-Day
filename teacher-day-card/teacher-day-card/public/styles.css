@@ -1211,17 +1211,16 @@ img {
     font-size: 14px;
   }
 .send-another-link {
-  position: absolute;
-
-  z-index: 20;
+  position: fixed;
 
   left: 50%;
-  bottom: 16px;
+  bottom: 18px;
+
+  z-index: 100;
 
   transform: translateX(-50%);
 
   color: #7c705d;
-
   font-family: "Noto Sans TC", sans-serif;
   font-size: 13px;
   line-height: 1.5;
@@ -1229,14 +1228,32 @@ img {
   white-space: nowrap;
   text-decoration: none;
 
-  opacity: 0.75;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
   transition:
-    opacity 180ms ease,
+    opacity 500ms ease,
+    visibility 0s linear 500ms,
     transform 180ms ease;
 }
 
-.send-another-link:hover {
+
+/* Only show the link after OPEN HERE */
+
+.scene-wish.opened .send-another-link {
+  opacity: 0.75;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity 500ms ease,
+    visibility 0s linear 0s,
+    transform 180ms ease;
+}
+
+
+.scene-wish.opened .send-another-link:hover {
   opacity: 1;
 
   transform:
