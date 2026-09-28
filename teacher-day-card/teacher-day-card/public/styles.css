@@ -1211,31 +1211,33 @@ img {
     font-size: 14px;
   }
 .send-another-link {
-  position: fixed;
-  left: 50%;
-  bottom: 22px;
-  z-index: 99999;
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 22px !important;
+  top: auto !important;
+  z-index: 99999 !important;
 
-  color: #DB7093;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 26px;
-  line-height: 1.5;
-  white-space: nowrap;
-  text-decoration: none;
+  transform: translateX(-50%) !important;
 
-  transform: translateX(-50%);
+  color: #DB7093 !important;
+  font-family: "Noto Sans TC", sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
 
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0 !important;
+  pointer-events: none !important;
 
-  transition: opacity 500ms ease;
+  transition: opacity 500ms ease !important;
 }
 
 .send-another-link.show {
-  opacity: 0.75;
-  pointer-events: auto;
+  opacity: 0.9 !important;
+  pointer-events: auto !important;
 }
 
 .send-another-link:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
