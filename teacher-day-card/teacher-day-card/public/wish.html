@@ -73,7 +73,7 @@
   const wishMessage = document.getElementById('wishMessage');
   const loading = document.getElementById('loading');
   const senderNote = document.getElementById('senderNote');
-
+const sendAnotherLink = document.querySelector('.send-another-link');
   function getWishId() {
     const parts = window.location.pathname.split('/').filter(Boolean);
     const wishIndex = parts.indexOf('wish');
@@ -118,9 +118,9 @@ senderNote.textContent = `這是一份來自${senderName}的心意`;
   }
 
   openButton.addEventListener('click', () => {
-    scene.classList.add('opened');
-  });
-
+  scene.classList.add('opened');
+  sendAnotherLink.classList.add('show');
+});
   loadWish();
 </script>
 
