@@ -1215,7 +1215,7 @@ img {
   z-index: 20;
 
   left: 50%;
-  bottom: 24px;
+  bottom: 8px;
 
   transform: translateX(-50%);
 
@@ -1225,6 +1225,8 @@ img {
 
   text-decoration: none;
   opacity: 0.75;
+
+  white-space: nowrap;
 
   transition:
     opacity 180ms ease,
@@ -1237,5 +1239,4 @@ img {
   transform:
     translateX(-50%)
     translateY(-2px);
-}
 }
