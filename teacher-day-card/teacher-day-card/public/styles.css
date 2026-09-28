@@ -1211,52 +1211,52 @@ img {
     font-size: 14px;
   }
 .send-another-link {
-  position: fixed;
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 22px !important;
+  top: auto !important;
+  right: auto !important;
 
-  left: 50%;
-  bottom: 18px;
+  z-index: 9999 !important;
 
-  z-index: 100;
+  display: block !important;
+  width: max-content !important;
+  height: auto !important;
 
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
 
-  color: #7c705d;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
+  color: #7c705d !important;
+  font-family: "Noto Sans TC", sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
 
-  white-space: nowrap;
-  text-decoration: none;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 
   transition:
     opacity 500ms ease,
-    visibility 0s linear 500ms,
-    transform 180ms ease;
+    visibility 0s linear 500ms !important;
 }
-
-
-/* Only show the link after OPEN HERE */
 
 .scene-wish.opened .send-another-link {
-  opacity: 0.75;
-  visibility: visible;
-  pointer-events: auto;
+  opacity: 0.75 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 22px !important;
+  top: auto !important;
+  transform: translateX(-50%) !important;
 
   transition:
     opacity 500ms ease,
-    visibility 0s linear 0s,
-    transform 180ms ease;
+    visibility 0s linear 0s !important;
 }
 
-
 .scene-wish.opened .send-another-link:hover {
-  opacity: 1;
-
-  transform:
-    translateX(-50%)
-    translateY(-2px);
+  opacity: 1 !important;
 }
