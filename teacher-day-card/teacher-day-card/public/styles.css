@@ -1210,23 +1210,24 @@ img {
   .sender-note {
     font-size: 14px;
   }
-  .send-another-link {
-  position: absolute;
-  z-index: 20;
+ .send-another-link {
+  position: fixed !important;
+  z-index: 100 !important;
 
-  left: 50%;
-  bottom: 8px;
+  left: 50% !important;
+  bottom: 12px !important;
 
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
 
   color: #7c705d;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 13px;
-
-  text-decoration: none;
-  opacity: 0.75;
+  line-height: 1.5;
 
   white-space: nowrap;
+  text-decoration: none;
+
+  opacity: 0.75;
 
   transition:
     opacity 180ms ease,
@@ -1238,5 +1239,5 @@ img {
 
   transform:
     translateX(-50%)
-    translateY(-2px);
+    translateY(-2px) !important;
 }
