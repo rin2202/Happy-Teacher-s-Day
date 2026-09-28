@@ -1105,7 +1105,7 @@ img {
     margin: 0;
     padding: 0 3px;
 
-    color: #6d665b;
+    color: #DB7093;
     font-family: "Noto Sans TC", sans-serif;
 
     font-size: 13px;
@@ -1216,9 +1216,9 @@ img {
   bottom: 22px;
   z-index: 99999;
 
-  color: #7c705d;
+  color: #DB7093;
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 13px;
+  font-size: 26px;
   line-height: 1.5;
   white-space: nowrap;
   text-decoration: none;
